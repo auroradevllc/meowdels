@@ -6,6 +6,7 @@ services:
     env_file: .env
     volumes:
       - ./storage:/var/www/storage/app
+      - ./database/database.sqlite:/var/www/storage/database/database.sqlite
     ports:
       - 80:80
 
