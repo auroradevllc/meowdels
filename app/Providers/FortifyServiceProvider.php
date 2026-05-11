@@ -11,6 +11,7 @@ use App\Settings\GlobalSettings;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
@@ -61,19 +62,23 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetPasswordView(fn () => view('pages::auth.reset-password'));
         Fortify::requestPasswordResetLinkView(fn () => view('pages::auth.forgot-password'));
 
-        $settings = app(GlobalSettings::class);
+        if (Schema::hasTable('settings')) {
+            $settings = app(GlobalSettings::class);
 
-        Fortify::registerView(function () use ($settings) {
-            if (! $settings->registration) {
-                abort(404);
-            }
-            return view('pages::auth.register');
-        });
-
-        if (! $settings->registration) {
-            $this->app->singleton(CreateNewUser::class, function () {
-                abort(403, 'Registration is currently closed.');
+            Fortify::registerView(function () use ($settings) {
+                if (! $settings->registration) {
+                    abort(404);
+                }
+                return view('pages::auth.register');
             });
+
+            if (! $settings->registration) {
+                $this->app->singleton(CreateNewUser::class, function () {
+                    abort(403, 'Registration is currently closed.');
+                });
+            }
+        } else {
+            Fortify::registerView(fn () => view('pages::auth.register'));
         }
     }
 
