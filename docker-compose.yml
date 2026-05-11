@@ -1,0 +1,14 @@
+services:
+  meowdels:
+    build:
+      dockerfile: Dockerfile
+    image: ghcr.io/tystuyfzand/meowdels:latest
+    env_file: .env
+    volumes:
+      - ./storage:/var/www/storage/app
+    ports:
+      - 80:80
+
+  # Flaresolverr for MakerWorld, required to work properly
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
