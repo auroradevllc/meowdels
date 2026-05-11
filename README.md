@@ -7,6 +7,8 @@ Meowdels is a Laravel-based application for 3D model management. This project is
 The goal is to provide a simple place for you to store all the 3D model files you are actively wanting to print/use, 
 including ones from other sites, and be able to organize them as you like.
 
+For a glimpse of what the UI looks like, see the [screenshots](screenshots) folder.
+
 ## Defaults
 
 By default, this application will use `sqlite` for the database, local storage for files, and other laravel defaults.

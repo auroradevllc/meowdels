@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b51281d0de407a571b2e05dc8ffd5020",
+    "content-hash": "6dbcf8f85bcf2c1bd0e4b44abb28cd77",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4308,51 +4308,6 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.2"
             },
             "time": "2025-12-14T04:43:48+00:00"
-        },
-        {
-            "name": "rikudou/php-scad",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RikudouSage/PhpScad.git",
-                "reference": "8d3c818908abd595fecacfe711296b7be8188487"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RikudouSage/PhpScad/zipball/8d3c818908abd595fecacfe711296b7be8188487",
-                "reference": "8d3c818908abd595fecacfe711296b7be8188487",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.13",
-                "phpstan/phpstan": "^1.9"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Rikudou\\PhpScad\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dominik Chrastecky",
-                    "email": "dominik@chrastecky.cz"
-                }
-            ],
-            "description": "A PHP wrapper around OpenSCAD",
-            "support": {
-                "issues": "https://github.com/RikudouSage/PhpScad/issues",
-                "source": "https://github.com/RikudouSage/PhpScad/tree/master"
-            },
-            "time": "2025-01-17T17:38:49+00:00"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -11430,8 +11385,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "laracasts/presenter": 20,
-        "rikudou/php-scad": 20
+        "laracasts/presenter": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
