@@ -20,9 +20,17 @@ For caching/sessions, Redis/Memcached can be used.
 For file storage, this project uses [Spatie Media Library](https://spatie.be/docs/laravel-medialibrary/v11/introduction)
 which supports many different filesystems, anything that Laravel supports. S3 is a popular choice.
 
+Note: When you use `php artisan db:seed`, a default user is created.
+
+Username: admin@example.com
+Password: password
+
+If db:seed is not called (optional), the first user registered will be assigned administrator.
+
 ## Docker
 
-This project is provided as an all-in-one Docker image, containing PHP and a webserver.
+This project is provided as an all-in-one Docker image, containing PHP and a webserver. The docker installation method
+is not complete, and lacks the initial migration/seeding setup. This will be fixed soon.
 
 To use it, see [docker-compose.yml](docker-compose.yml) or use the image directly:
 
@@ -75,7 +83,9 @@ Follow these steps to get your local environment set up. This will allow you to 
 
 ## TODO
 
-- Fix 3MF files with extensions on the previewer (see [lib3mf-cli-docker](https://github.com/aurroradevllc/lib3mf-cli-docker))
+- Make the Docker version automatically run migrations/seeding on first start
+- Provide examples of using MariaDB/MySQL and Redis for additional enhancements in speed
+- Fix 3MF files with extensions on the previewer (see [lib3mf-cli-docker](https://github.com/auroradevllc/lib3mf-cli-docker))
 - Add more importers (Thangs, etc)
 - Make the UI more clear and easy to use
 - Improve model preview generation, allow server-side generation?
