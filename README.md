@@ -9,9 +9,16 @@ including ones from other sites, and be able to organize them as you like.
 
 For a glimpse of what the UI looks like, see the [screenshots](screenshots) folder.
 
-## Defaults
+## Defaults/Configuration
 
 By default, this application will use `sqlite` for the database, local storage for files, and other laravel defaults.
+
+This can be configured with anything from MySQL to Postgres for the database, anything Laravel supports.
+
+For caching/sessions, Redis/Memcached can be used.
+
+For file storage, this project uses [Spatie Media Library](https://spatie.be/docs/laravel-medialibrary/v11/introduction)
+which supports many different filesystems, anything that Laravel supports. S3 is a popular choice.
 
 ## Docker
 
@@ -65,6 +72,13 @@ Follow these steps to get your local environment set up. This will allow you to 
     ```bash
     composer run dev
     ```
+
+## TODO
+
+- Fix 3MF files with extensions on the previewer (see [lib3mf-cli-docker](https://github.com/aurroradevllc/lib3mf-cli-docker))
+- Add more importers (Thangs, etc)
+- Make the UI more clear and easy to use
+- Improve model preview generation, allow server-side generation?
 
 ## License
 
