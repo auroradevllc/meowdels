@@ -26,7 +26,10 @@ RUN apk add --no-cache jpegoptim \
 
 RUN mkdir -p /var/log/supervisor
 
-COPY ./docker/tmp.ini /usr/local/etc/php/config.d/custom.ini
+COPY docker/php/meowdels.ini /usr/local/etc/php/config.d/meowdels.ini
+
+COPY ./docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 USER www-data
 WORKDIR /var/www
@@ -40,6 +43,8 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN composer dump-autoload && \
     php artisan storage:link
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 80
 
