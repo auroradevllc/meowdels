@@ -27,6 +27,18 @@ Password: password
 
 If db:seed is not called (optional), the first user registered will be assigned administrator.
 
+## Importers
+
+This project supports importing from existing model sites. Some are better supported than others due to the nature of models.
+
+We make every effort we can to preserve licensing and attribution when importing models.
+
+| Platform        | Support Status | Method        | Notes                                                                 |
+|:----------------|:---------------|:--------------|:----------------------------------------------------------------------|
+| **Thingiverse** | Official       | API           | Most stable method. Requires API Key.                                 |
+| **Printables**  | Unofficial     | HTML Scraping | Subject to breakage if site layout changes.                           |
+| **MakerWorld**  | Unofficial     | HTML Scraping | Requires login and  **FlareSolverr**. Will break when shown captchas. |
+
 ## Docker
 
 This project is provided as an all-in-one Docker image, containing PHP and a webserver. The docker installation method

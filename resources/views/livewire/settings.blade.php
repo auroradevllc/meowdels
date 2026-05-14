@@ -10,7 +10,7 @@
                     <flux:label>{{ str($key)->headline() }}</flux:label>
 
                     @if (! empty($descriptions[$key]))
-                        <flux:description>{{ $descriptions[$key] }}</flux:description>
+                        <flux:description>{!! $descriptions[$key] !!}</flux:description>
                     @endif
 
                     @if(is_bool($value))
