@@ -24,6 +24,8 @@ RUN apk add --no-cache jpegoptim \
     libavif-apps \
     supervisor
 
+COPY --from=ghcr.io/auroradevllc/lib3mf-cli-docker /usr/local/bin/3mf /usr/local/bin/3mf
+
 RUN mkdir -p /var/log/supervisor
 
 COPY docker/php/meowdels.ini /usr/local/etc/php/config.d/meowdels.ini
